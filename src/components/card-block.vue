@@ -2,10 +2,10 @@
 .card-block
   .card-wrapper
     .header
-      .title {{ content.content.title }}
+      .title {{ content.title }}
     .content
       .card-list
-        card(v-for="(card, index) in content.content.cards" :key="index" :card="card")
+        card(v-for="(card, index) in content.cards" :key="index" :card="card")
       
 </template>
 <script>

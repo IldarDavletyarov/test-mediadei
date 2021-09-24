@@ -31,21 +31,21 @@ export default {
         font-size 24px
         font-weight 600
       .live-status
-        font-weight 600
-        font-size 18px
-        line-height 18px
+        font-size 12px
+        line-height 12px
         border-radius 4px
-        background rgba(255,255,255,0.4)
-        padding 6px
+        background rgba(255,255,255,0.2)
+        padding 5px
         position relative
         display flex
         align-items center
+        font-weight 600
         &::before
           content ""
           display block
-          height 8px
-          width 8px
-          border-radius 4px
+          height 6px
+          width 6px
+          border-radius 3px
           background-color red
           margin 4px
     .content

@@ -3,7 +3,7 @@
   .content
     img(:src="card.image")
     .status
-      .time {{ card.time }}
+      .time {{ new Date(card.time).toISOString().substr(11, 8) }}
       .status-line
         .line-complete(:style="{ '--percentage': card.percentComplete }")
   .title {{ card.title }}
@@ -34,11 +34,13 @@ export default {
       bottom 0
       padding 8px
       right 0
+      box-shadow 0px -38px 23px -25px rgba(0, 0, 0, 1) inset;
       .time
         margin-left auto
         font-size 8px
         text-align right
         color rgba(255,255,255,0.96)
+        margin-bottom 4px
       .status-line
         width 100%
         height 4px

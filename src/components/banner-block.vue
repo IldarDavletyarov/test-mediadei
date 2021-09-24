@@ -1,6 +1,6 @@
 <template lang="pug">
 .banner-block
-  carousel
+  carousel(:autoplay="2000" :items-to-show="1")
     slide(v-for="(banner, index) in content" :key="index")
       .wrapper
         img(:src="banner.image")
@@ -8,15 +8,20 @@
           .title {{ banner.title }}
           .subtitle {{ banner.subtitle }}
           .button Play
+    template(#addons="{ currentSlide }")
+      .t {{ currentSlide }}
+      pagination(:class="{'init': currentSlide <= -1}")
 </template>
 <script>
 import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide } from 'vue3-carousel';
+import { Carousel, Slide, Navigation, Pagination} from 'vue3-carousel';
 
 export default {
   components: {
     Carousel,
     Slide,
+    Navigation,
+    Pagination,
   },
   props: {
     content: {
@@ -26,8 +31,30 @@ export default {
   },
 }
 </script>
-<style lang="stylus" scoped>
+<style lang="stylus">
 .banner-block
+  .carousel__pagination
+    width 100%
+    justify-content space-between
+    margin 0 !important
+    padding 0 8px !important
+    position relative
+    top -24px
+    &.init > li.carousel__pagination-item:first-child > button.carousel__pagination-button
+      background rgb(103, 131, 221)
+      width calc(50vw - 8px)
+    > li.carousel__pagination-item
+      width 100%
+      > button.carousel__pagination-button
+        background grey
+        height 3px
+        border-radius 1.5px
+        width calc(100% - 8px)
+        transition background .1s ease
+        &.carousel__pagination-button--active
+          background rgb(103, 131, 221)
+          width calc(50vw - 8px)
+
   .wrapper
     position relative
     width 100vw
@@ -43,7 +70,7 @@ export default {
       color #fff
       text-align left
       padding 16px
-      box-shadow: 0px -100px 100px -81px rgba(13, 19, 41, 0.92) inset;
+      box-shadow: 0px -100px 56px -29px rgba(13, 19, 41, 1) inset;
       .title
         font-weight 600
         font-size 24px

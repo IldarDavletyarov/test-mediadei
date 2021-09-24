@@ -1,19 +1,26 @@
 # test-mediadei
+A test job done in Vue 3.
+
+The layout is designed for mobile devices.
+
+The implementation allows you to **flexibly** display as many different blocks as you want on the homepage.
+
+The following blocks are implemented in the project:
++ block of banners
++ live broadcast block
++ movie cards block
++ block of movies the user is still watching
 
 ## Project setup
 ```
-npm install
+npm i
 ```
 
-### Compiles and hot-reloads for development
+### Compiles dev
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
+### Compiles prod
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

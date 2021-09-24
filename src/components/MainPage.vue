@@ -19,9 +19,6 @@ export default {
     CardBlock,
     Builder,
   },
-  props: {
-    msg: String
-  },
   setup() {
     return {
       content: [

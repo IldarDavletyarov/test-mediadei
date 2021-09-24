@@ -18,9 +18,11 @@ export default {
 .card
   border-radius 8px
   width 100%
+  overflow hidden
   .content
     position relative
     height 100%
+    overflow hidden
     img
       width 100%
       border-radius 8px

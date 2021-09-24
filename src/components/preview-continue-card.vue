@@ -25,6 +25,7 @@ export default {
   width 100%
   .content
     position relative
+    overflow hidden
     img
       width 100%
       border-radius 8px
@@ -35,6 +36,7 @@ export default {
       padding 8px
       right 0
       box-shadow 0px -38px 23px -25px rgba(0, 0, 0, 1) inset;
+      border-radius 8px
       .time
         margin-left auto
         font-size 8px

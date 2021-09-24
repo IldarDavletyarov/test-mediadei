@@ -1,19 +1,19 @@
 <template lang="pug">
-.continue-block
-  .continue-wrapper
+.card-block
+  .card-wrapper
     .header
-      .title Continue watching
+      .title {{ content.content.title }}
     .content
       .card-list
-        preview-continue-card(v-for="(card, index) in content" :key="index" :card="card")
+        card(v-for="(card, index) in content.content.cards" :key="index" :card="card")
       
 </template>
 <script>
-import PreviewContinueCard from './preview-continue-card.vue';
+import Card from './card.vue';
 
 export default {
   components: {
-    PreviewContinueCard,
+    Card,
   },
   props: {
     content: {
@@ -24,8 +24,8 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-.continue-block
-  .continue-wrapper
+.card-block
+  .card-wrapper
     padding 8px
     color #fff
     .header
@@ -44,7 +44,7 @@ export default {
         display inline-grid
         max-width 100%
         grid-column-gap 8px
-        grid-auto-columns 280px
+        grid-auto-columns 140px
         grid-auto-flow column
         scrollbar-width none
         &::-webkit-scrollbar

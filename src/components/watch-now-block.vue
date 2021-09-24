@@ -26,6 +26,7 @@ export default {
       display flex
       justify-content space-between
       align-items center
+      margin-bottom 8px
       .title
         font-size 24px
         font-weight 600

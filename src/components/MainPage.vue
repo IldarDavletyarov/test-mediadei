@@ -3,11 +3,13 @@
   banner-block(:content="bannerContent")
   watch-now-block(:content="watchContent")
   continue-block(:content="continueContent")
+  card-block(:content="cardBlock")
 </template>
 <script>
 import BannerBlock from './banner-block.vue';
 import WatchNowBlock from './watch-now-block.vue';
 import ContinueBlock from './continue-block.vue';
+import CardBlock from './card-block.vue';
 
 export default {
   name: 'MainPage',
@@ -15,6 +17,7 @@ export default {
     BannerBlock,
     WatchNowBlock,
     ContinueBlock,
+    CardBlock,
   },
   props: {
     msg: String
@@ -61,6 +64,30 @@ export default {
           percentComplete: '70',
         },
       ],
+      cardBlock: {
+        type: 'card-block',
+        content: {
+          title: 'New',
+          cards: [
+            {
+              image: 'https://upload.wikimedia.org/wikipedia/ru/thumb/b/b4/Harry_Potter_and_the_Philosopher%27s_Stone_—_movie.jpg/208px-Harry_Potter_and_the_Philosopher%27s_Stone_—_movie.jpg',
+              title: 'Harry Potter',
+            },
+            {
+              image: 'https://upload.wikimedia.org/wikipedia/ru/thumb/b/b4/Harry_Potter_and_the_Philosopher%27s_Stone_—_movie.jpg/208px-Harry_Potter_and_the_Philosopher%27s_Stone_—_movie.jpg',
+              title: 'Harry Potter',
+            },
+            {
+              image: 'https://upload.wikimedia.org/wikipedia/ru/thumb/b/b4/Harry_Potter_and_the_Philosopher%27s_Stone_—_movie.jpg/208px-Harry_Potter_and_the_Philosopher%27s_Stone_—_movie.jpg',
+              title: 'Harry Potter',
+            },
+            {
+              image: 'https://upload.wikimedia.org/wikipedia/ru/thumb/b/b4/Harry_Potter_and_the_Philosopher%27s_Stone_—_movie.jpg/208px-Harry_Potter_and_the_Philosopher%27s_Stone_—_movie.jpg',
+              title: 'Harry Potter',
+            },
+          ],
+        },
+      },
     };
   },
 };

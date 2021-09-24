@@ -43,7 +43,7 @@ export default {
       color #fff
       text-align left
       padding 16px
-      box-shadow: 0px -100px 100px -81px rgba(0, 0, 0, 0.92) inset;
+      box-shadow: 0px -100px 100px -81px rgba(13, 19, 41, 0.92) inset;
       .title
         font-weight 600
         font-size 32px

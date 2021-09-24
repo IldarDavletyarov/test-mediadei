@@ -1,14 +1,17 @@
 <template lang="pug">
 .main-page
   banner-block(:content="bannerContent")
+  watch-now-block(:content="watchContent")
 </template>
 <script>
 import BannerBlock from './banner-block.vue';
+import WatchNowBlock from './watch-now-block.vue';
 
 export default {
   name: 'MainPage',
   components: {
     BannerBlock,
+    WatchNowBlock,
   },
   props: {
     msg: String
@@ -31,23 +34,15 @@ export default {
           subtitle: 'The clumpsy fellow dispatched to the forest.',
           image: 'https://skazki.land/api/get-resized-image/dyadya-misha-092a2.jpg?width=1024&height=1024&fit=inside&has-enlargement=1&kernel=cubic',
         },
-      ]
-    }
-  }
-}
+      ],
+      watchContent: {
+        image: 'https://cs10.pikabu.ru/post_img/2018/06/20/5/1529479341199516054.jpg',
+      },
+    };
+  },
+};
 </script>
 <style scoped lang="stylus">
-h3
-  margin 40px 0 0
-
-ul
-  list-style-type none
-  padding 0
-
-li
-  display inline-block
-  margin 0 10px
-
-a
-  color #42b983
+.main-page
+  background rgb(13, 19, 41)
 </style>

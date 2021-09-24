@@ -1,6 +1,6 @@
 <template lang="pug">
 .banner-block
-  carousel(:autoplay="2000" :items-to-show="1")
+  carousel(:items-to-show="1")
     slide(v-for="(banner, index) in content" :key="index")
       .wrapper
         img(:src="banner.image")

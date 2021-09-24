@@ -46,7 +46,7 @@ export default {
       box-shadow: 0px -100px 100px -81px rgba(13, 19, 41, 0.92) inset;
       .title
         font-weight 600
-        font-size 32px
+        font-size 24px
       .sibtitle
         font-size 18px
         margin-top 8px

@@ -1,14 +1,20 @@
 <template lang="pug">
-.watch-now-block
-  .watch-now-wrapper
+.continue-block
+  .continue-wrapper
     .header
-      .title Watch now
-      .live-status Live
+      .title Continue watching
     .content
-      img(:src="content.image")
+      .card-list
+        preview-continue-card(v-for="(card, index) in content" :key="index" :card="card")
+      
 </template>
 <script>
+import PreviewContinueCard from './preview-continue-card.vue';
+
 export default {
+  components: {
+    PreviewContinueCard,
+  },
   props: {
     content: {
       type: Object,
@@ -18,8 +24,8 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-.watch-now-block
-  .watch-now-wrapper
+.continue-block
+  .continue-wrapper
     padding 8px
     color #fff
     .header
@@ -49,10 +55,12 @@ export default {
           margin 4px
     .content
       width 100%
-      z-index 1
-      cursor pointer
-      margin-top 8px
-      img
+      overflow hidden
+      .card-list
+        overflow-x auto
+        display inline-grid
         max-width 100%
-        border-radius 8px
+        grid-column-gap 8px
+        grid-auto-columns 280px
+        grid-auto-flow column
 </style>

@@ -2,16 +2,19 @@
 .main-page
   banner-block(:content="bannerContent")
   watch-now-block(:content="watchContent")
+  continue-block(:content="continueContent")
 </template>
 <script>
 import BannerBlock from './banner-block.vue';
 import WatchNowBlock from './watch-now-block.vue';
+import ContinueBlock from './continue-block.vue';
 
 export default {
   name: 'MainPage',
   components: {
     BannerBlock,
     WatchNowBlock,
+    ContinueBlock,
   },
   props: {
     msg: String
@@ -38,6 +41,26 @@ export default {
       watchContent: {
         image: 'https://cs10.pikabu.ru/post_img/2018/06/20/5/1529479341199516054.jpg',
       },
+      continueContent: [
+        {
+          image: 'https://cs10.pikabu.ru/post_img/2018/06/20/5/1529479341199516054.jpg',
+          title: 'Alenkiy cvetochek',
+          time: '1:04:23', // need in timestamp
+          percentComplete: '30',
+        },
+        {
+          image: 'https://cs10.pikabu.ru/post_img/2018/06/20/5/1529479341199516054.jpg',
+          title: 'Alenkiy cvetochek',
+          time: '2:04:23', // need in timestamp
+          percentComplete: '40',
+        },
+        {
+          image: 'https://cs10.pikabu.ru/post_img/2018/06/20/5/1529479341199516054.jpg',
+          title: 'Alenkiy cvetochek',
+          time: '3:04:23', // need in timestamp
+          percentComplete: '70',
+        },
+      ],
     };
   },
 };
